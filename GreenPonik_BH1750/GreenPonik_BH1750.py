@@ -15,9 +15,6 @@ import busio
 
 
 class GreenPonik_BH1750:
-    def __init__():
-        pass
-
     # Constants taken from the datasheet
     DEVICE = 0x23       # Default device I2C address
     POWER_DOWN = 0x00   # No active state

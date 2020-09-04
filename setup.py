@@ -57,7 +57,8 @@ setup(
     python_requires=REQUIRES_PYTHON,
     project_urls={  # Optional
         "Source": "https://github.com/GreenPonik/GreenPonik_BH1750/",
-        "Bug Reports": "https://github.com/GreenPonik/GreenPonik_BH1750/issues",
+        "Bug Reports": "https://github.com/GreenPonik/\
+            GreenPonik_BH1750/issues",
     },
     keywords="GreenPonik hydroponics bh1750 \
     light reader python hardware diy iot raspberry pi",

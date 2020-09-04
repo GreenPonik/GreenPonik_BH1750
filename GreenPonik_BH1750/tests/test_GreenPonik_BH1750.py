@@ -27,6 +27,7 @@ class BusioMock(MagicMock()):
 sys.modules["board"] = BoardMock()
 sys.modules["busio"] = BusioMock()
 
+
 class Test_GreenPonik_BH1750(unittest.TestCase):
     @patch("GreenPonik_BH1750.GreenPonik_BH1750")
     def test_read_bh1750(self, MockBH):
