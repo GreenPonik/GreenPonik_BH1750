@@ -53,8 +53,8 @@ class GreenPonik_BH1750:
             bh = i2c.readfrom_into(addr, buffer, self.ONE_TIME_HIGH_RES_MODE_2)
             print(bh)
             lux = bh
-
             print('light: %.3f lx' % lux)
+            i2c.deinit()
             return lux
         except BaseException as e:
             print('cannot read bh1750')
