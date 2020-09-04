@@ -1,1 +1,1 @@
-from GreenPonik_BH1750 import GreenPonik_BH1750
+from GreenPonik_BH1750.GreenPonik_BH1750 import GreenPonik_BH1750
