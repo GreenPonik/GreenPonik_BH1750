@@ -40,6 +40,14 @@ class GreenPonik_BH1750:
         self._scl_pin = scl_pin if None is not scl_pin else board.SCL
         self._sda_pin = sda_pin if None is not sda_pin else board.SDA
 
+    @property
+    def scl_pin(self):
+        return self._scl_pin
+
+    @property
+    def sda_pin(self):
+        return self._sda_pin
+
     def _convert_to_number(self, data):
         # Simple function to convert 2 bytes of data
         # into a decimal number
