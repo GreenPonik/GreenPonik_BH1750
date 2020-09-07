@@ -57,7 +57,7 @@ def read_bh1750():
 ## Example
 ```Python
 import time
-from GreenPonik_BH1750 import GreenPonik_BH1750
+from GreenPonik_BH1750.GreenPonik_BH1750 import GreenPonik_BH1750
 
 if __name__ == "__main__":
     try:
