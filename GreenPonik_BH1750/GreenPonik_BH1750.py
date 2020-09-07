@@ -50,7 +50,7 @@ class GreenPonik_BH1750:
             # lux = self._convertToNumber(data)
             i2c = busio.I2C(board.SCL, board.SDA)
             buffer = bytearray(1)
-            bh = i2c.readfrom_into(addr, buffer, self.ONE_TIME_HIGH_RES_MODE_2)
+            bh = i2c.readfrom_into(addr, buffer)
             print(bh)
             lux = bh
             print('light: %.3f lx' % lux)
