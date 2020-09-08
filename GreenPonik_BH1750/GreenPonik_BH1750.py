@@ -11,8 +11,6 @@
 """
 
 from adafruit_extended_bus import ExtendedI2C as I2C
-# import board
-# import busio
 
 
 class GreenPonik_BH1750:
@@ -39,21 +37,11 @@ class GreenPonik_BH1750:
     # _ONE_TIME_LOW_RES_MODE = 0x23
 
     def __init__(self, bus=None):
-        # self._scl_pin = scl_pin if None is not scl_pin else board.SCL
-        # self._sda_pin = sda_pin if None is not sda_pin else board.SDA
         self._bus = bus if None is not bus else self.DEFAULT_BUS
 
     @property
     def bus(self):
         return self._bus
-
-    # @property
-    # def scl_pin(self):
-    #     return self._scl_pin
-
-    # @property
-    # def sda_pin(self):
-    #     return self._sda_pin
 
     def _convert_to_number(self, data):
         # Simple function to convert 2 bytes of data
@@ -62,19 +50,15 @@ class GreenPonik_BH1750:
 
     def read_bh1750(self, addr=DEFAULT_ADDR):
         try:
-            # bus = smbus.SMBus(0)    # Rev 1 Pi uses 0
-            # bus = smbus.SMBus(1)    # Rev 2 Pi uses 1
             # data = bus.read_i2c_block_data(addr, \
             # self._ONE_TIME_HIGH_RES_MODE_2)
             # lux = self._convertToNumber(data)
-            # i2c = busio.I2C(self._scl_pin, self._sda_pin)
-            i2c = I2C(self._bus)
-            buffer = bytearray(1)
-            bh = i2c.readfrom_into(addr, buffer)
-            lux = bh
-            print('Light: %.3f lx' % lux)
-            i2c.deinit()
-            return lux
+            with I2C(self._bus) as i2c:
+                buffer = bytearray(1)
+                bh = i2c.readfrom_into(addr, buffer)
+                lux = bh
+                print('Light: %.3f lx' % lux)
+                return lux
         except BaseException as e:
             print('cannot read bh1750')
             print('An exception occurred: {}'.format(e))
