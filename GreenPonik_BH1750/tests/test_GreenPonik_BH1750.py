@@ -4,34 +4,29 @@
 
 import sys
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 
-class BoardMock:
+class SmbusMock():
+    pass
+
+
+class FCNTLMock:
     def __init__(self):
-        self._scl = 18
-        self._sda = 15
+        pass
 
-    def SCL(self):
-        return self._scl
-
-    def SDA(self):
-        return self._sda
+    def ioctl():
+        pass
 
 
-class BusioMock(MagicMock()):
-    def I2C(self, sda, scl):
-        return True
-
-
-sys.modules["board"] = BoardMock()
-sys.modules["busio"] = BusioMock()
+sys.modules["fcntl"] = FCNTLMock()
+sys.modules["smbus"] = SmbusMock()
 
 
 class Test_GreenPonik_BH1750(unittest.TestCase):
     @patch("GreenPonik_BH1750.GreenPonik_BH1750")
-    def test_read_bh1750(self, MockBH):
-        bh = MockBH()
+    def test_read_bh1750(self, Mock):
+        bh = Mock()
         expected = 124.3
         bh.read_bh1750.return_value = expected
         readed = bh.read_bh1750()
