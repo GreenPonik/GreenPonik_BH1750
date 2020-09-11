@@ -23,8 +23,8 @@ sys.modules["fcntl"] = FCNTLMock()
 sys.modules["smbus"] = SmbusMock()
 
 
-class Test_GreenPonik_BH1750(unittest.TestCase):
-    @patch("GreenPonik_BH1750.GreenPonik_BH1750")
+class Test_BH1750(unittest.TestCase):
+    @patch("GreenPonik_BH1750.BH1750.BH1750")
     def test_read_bh1750(self, Mock):
         bh = Mock()
         expected = 124.3

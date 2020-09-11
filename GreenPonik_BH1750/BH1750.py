@@ -14,7 +14,7 @@ from adafruit_extended_bus import ExtendedI2C as I2C
 import adafruit_bh1750
 
 
-class GreenPonik_BH1750:
+class BH1750:
 
     DEFAULT_ADDR = 0x23
     DEFAULT_BUS = 1
