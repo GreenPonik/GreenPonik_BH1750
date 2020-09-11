@@ -1,9 +1,9 @@
 import time
-from GreenPonik_BH1750.GreenPonik_BH1750 import GreenPonik_BH1750
+from GreenPonik_BH1750.BH1750 import BH1750
 
 if __name__ == "__main__":
     try:
-        bh = GreenPonik_BH1750()
+        bh = BH1750()
         while True:
             lux = bh.read_bh1750()
             print(lux)
