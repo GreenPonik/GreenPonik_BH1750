@@ -38,5 +38,5 @@ class BH1750:
                 print('Light: %.3f lx' % lux)
                 return lux
         except BaseException as e:
-            print('cannot read bh1750')
-            print('An exception occurred: {}'.format(e))
+            raise ('cannot read bh1750, \
+            An exception occurred: {}'.format(e))
