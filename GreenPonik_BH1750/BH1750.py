@@ -37,6 +37,5 @@ class BH1750:
                 lux = sensor.lux
                 print('Light: %.3f lx' % lux)
                 return lux
-        except BaseException as e:
-            raise BaseException('cannot read bh1750, \
-            An exception occurred: {}'.format(e))
+        except Exception as e:
+            print('cannot read bh1750, An exception occurred: {}'.format(e))
