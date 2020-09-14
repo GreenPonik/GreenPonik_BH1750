@@ -22,7 +22,7 @@ class BH1750:
     def __init__(self, bus=DEFAULT_BUS, addr=DEFAULT_ADDR):
         self._bus = bus
         self._addr = addr
-        self._debug
+        self._debug = False
 
     @property
     def bus(self):
