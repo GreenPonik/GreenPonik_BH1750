@@ -22,6 +22,7 @@ class BH1750:
     def __init__(self, bus=DEFAULT_BUS, addr=DEFAULT_ADDR):
         self._bus = bus
         self._addr = addr
+        self._debug
 
     @property
     def bus(self):
@@ -30,6 +31,14 @@ class BH1750:
     @property
     def address(self):
         return self._addr
+
+    @property
+    def debug(self):
+        return self._debug
+
+    @debug.setter
+    def debug(self, d):
+        self._debug = d
 
     def read_bh1750(self):
         """
@@ -40,7 +49,8 @@ class BH1750:
             with I2C(self._bus) as i2c:
                 sensor = adafruit_bh1750.BH1750(i2c, address=self._addr)
                 lux = sensor.lux
-                print('Light: %.3f lx' % lux)
+                if self._debug:
+                    print('Light: %.3f lx' % lux)
                 return lux
         except Exception as e:
             print('cannot read bh1750, An exception occurred: {}'.format(e))
