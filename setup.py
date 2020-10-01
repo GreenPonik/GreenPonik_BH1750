@@ -9,7 +9,7 @@ URL = "https://github.com/GreenPonik/GreenPonik_BH1750"
 EMAIL = "contact@greenponik.com"
 AUTHOR = "GreenPonik SAS"
 REQUIRES_PYTHON = ">=3.6.0"
-VERSION = "0.0.6"
+VERSION = "0.0.7"
 
 # What packages are required for this module to be executed?
 REQUIRED = [
