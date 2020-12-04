@@ -15,7 +15,7 @@ import adafruit_bh1750
 
 
 class BH1750:
-
+    # TODO add compatibility to use it with the with statement
     DEFAULT_ADDR = 0x23
     DEFAULT_BUS = 1
 
@@ -61,7 +61,7 @@ class BH1750:
                 sensor = adafruit_bh1750.BH1750(i2c, address=self._addr)
                 lux = sensor.lux
                 if self._debug:
-                    print('Light: %.3f lx' % lux)
+                    print("Light: %.3f lx" % lux)
                 return lux
         except Exception as e:
-            print('cannot read bh1750, An exception occurred: {}'.format(e))
+            print("cannot read bh1750, An exception occurred: {}".format(e))
